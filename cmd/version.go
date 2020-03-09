@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/kesslerdev/ki/build"
 	"github.com/spf13/cobra"
 )
 
@@ -15,6 +16,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of Ki",
 	Long:  `All software has versions. This is Ki's`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Ki CLI v0.9 -- HEAD")
+		fmt.Printf("Ki CLI v%v -- %v\n", build.Version, build.Revision)
+		fmt.Printf("Built by %v at %v\n", build.User, build.Time)
 	},
 }
