@@ -22,7 +22,7 @@ THE SOFTWARE.
 package main
 
 import (
-	"github.com/kesslerdev/k/cmd"
+	"github.com/kesslerdev/kli/cmd"
 )
 
 func main() {
