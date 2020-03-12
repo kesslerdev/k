@@ -1,7 +1,7 @@
 package build
 
 // Version in semver format
-var Version string = "0.0.1"
+var Version string
 
 // Revision git rev of code
 var Revision string

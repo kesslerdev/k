@@ -1,4 +1,5 @@
 /*
+Package cmd contain commands of utility
 Copyright © 2020 Jeff MONNIER <kessler.dev@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,8 +24,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/spf13/cobra"
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
@@ -34,7 +36,7 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "ki",
+	Use:   "k",
 	Short: "A brief description of your application",
 	Long: `A longer description that spans multiple lines and likely contains
 examples and usage of using your application. For example:
@@ -63,7 +65,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.ki.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.k.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
@@ -83,9 +85,9 @@ func initConfig() {
 			os.Exit(1)
 		}
 
-		// Search config in home directory with name ".ki" (without extension).
+		// Search config in home directory with name ".k" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".ki")
+		viper.SetConfigName(".k")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match

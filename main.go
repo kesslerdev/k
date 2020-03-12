@@ -21,7 +21,9 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/kesslerdev/ki/cmd"
+import (
+	"github.com/kesslerdev/k/cmd"
+)
 
 func main() {
 	cmd.Execute()
